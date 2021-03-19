@@ -8,14 +8,42 @@
     align-content: center;
     border-bottom: 1px dashed get-color("border");
 
-    &:focus {
-      outline: 1px solid get-color("light-shade");
+    &:focus-within {
+      border-bottom: 1px solid get-color("border");
     }
 
-    &__second {
+    &--second {
       flex-grow: 1;
       text-align: left;
       color: get-color("brown");
+
+      &:hover span,
+      &:focus span {
+        border: 1px dashed get-color("light-shade");
+      }
+
+      span {
+        position: relative;
+        padding: 0.2rem;
+      }
+
+      span > svg {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+
+        right: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+
+        .line {
+          stroke-width: 1;
+          stroke-dasharray: 500;
+          stroke-dashoffset: 500;
+          transition: stroke-dashoffset 1s ease-in-out;
+        }
+      }
     }
 
     .list-icons {
@@ -25,13 +53,18 @@
         vertical-align: middle;
       }
 
-      &:focus {
-        outline: 1px dotted #212121;
+      button:focus,
+      button:hover {
+        outline: 1px dashed currentColor;
       }
     }
 
     .complete {
       color: get-color("light-shade");
+
+      .line {
+        stroke-dashoffset: 0;
+      }
     }
   }
 }

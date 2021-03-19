@@ -1,16 +1,15 @@
-@import 'config';
+@import "config";
 
-@import '../../node_modules/gorko/gorko.scss';
+@import "../../node_modules/gorko/gorko.scss";
 
-@import 'reset';
+@import "reset";
 
-@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
 
 body {
-  @include apply-utility('font', 'base');
-  @include apply-utility('color', 'gray');
-  @include apply-utility('bg', 'light');
+  @include apply-utility("font", "base");
+  @include apply-utility("color", "gray");
+  @include apply-utility("bg", "light");
   line-height: 1.5;
 }
 
@@ -24,9 +23,12 @@ button {
   cursor: pointer;
 }
 
+:focus {
+  outline: none;
+}
 
 // Blocks
-@import 'blocks/buttons';
-@import 'blocks/main-wrapper';
-@import 'blocks/todoForm';
-@import 'blocks/todoList';
+@import "blocks/buttons";
+@import "blocks/main-wrapper";
+@import "blocks/todoForm";
+@import "blocks/todoList";

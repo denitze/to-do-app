@@ -24,12 +24,28 @@ const ListItem = ({
     <li className="list-item text-400 md:text-450">
       <button
         onClick={onComplete}
-        className={`pd-200 list-item__second ${
+        className={`pd-200 list-item--second ${
           todo.isComplete ? "complete" : ""
         }`}
       >
-        <span style={todo.isComplete ? { textDecoration: "line-through" } : {}}>
+        <span>
           {todo.task}
+          <svg
+            preserveAspectRatio="none"
+            vector-effect="non-scaling-stroke"
+            viewBox="0 0 154 30"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              className="line"
+              d="M5 7c46.8-.5 141.1-3.7 141.5 1.5.4 5.2-97.3 6.8-144.5 9.5l150.5 5"
+              stroke="#5B2929"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
         </span>
       </button>
       <div className="list-icons">

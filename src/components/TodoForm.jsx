@@ -34,7 +34,7 @@ const TodoForm = (props) => {
       />
       <button
         className={`text-400 md:text-450 br-m ${
-          props.currentEdit ? "bg-secondary" : "bg-primary"
+          props.currentEdit ? "bg-secondary edit-btn" : "bg-primary"
         }`}
       >
         {" "}
