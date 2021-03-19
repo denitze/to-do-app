@@ -1,4 +1,611 @@
+@charset "UTF-8";
+/**
+ * BASE SIZE
+ * All calculations are based on this. It’s recommended that
+ * you keep it at 1rem because that is the root font size. You
+ * can set it to whatever you like and whatever unit you like.
+ */
+/**
+  * SIZE SCALE
+  * This is a Major Third scale that powers all the utilities that
+  * it is relevant for (font-size, margin, padding). All items are
+  * calcuated off the base size, so change that and cascade across
+  * your whole project.
+  */
+/**
+  * COLORS
+  * Colors are shared between backgrounds and text by default.
+  * You can also use them to power borders, fills or shadows, for example.
+  */
+/**
+  * CORE CONFIG
+  * This powers everything from utility class generation to breakpoints
+  * to enabling/disabling pre-built components/utilities.
+  */
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
+.bg-dark {
+  background: #000;
+}
+
+.bg-white {
+  background: #fff;
+}
+
+.bg-light {
+  background: #f7eee4;
+}
+
+.bg-light-shade {
+  background: #d8c7b5;
+}
+
+.bg-light-gray {
+  background: #f7f7f7;
+}
+
+.bg-brown {
+  background: #74372a;
+}
+
+.bg-border {
+  background: #ae5f4e;
+}
+
+.bg-primary {
+  background: #87d674;
+}
+
+.bg-secondary {
+  background: #d86728;
+}
+
+.br-s {
+  border-radius: 0.25rem;
+}
+
+.br-m {
+  border-radius: 0.375rem;
+}
+
+.br-l {
+  border-radius: 0.5rem;
+}
+
+.br-xl {
+  border-radius: 5rem;
+}
+
+.br-full {
+  border-radius: 50%;
+}
+
+.pd-200 {
+  padding: 0.375rem;
+}
+
+.pd-300 {
+  padding: 0.75rem;
+}
+
+.pd-400 {
+  padding: 1rem;
+}
+
+.pd-450 {
+  padding: 1.25rem;
+}
+
+.pd-500 {
+  padding: 1.5rem;
+}
+
+.pd-550 {
+  padding: 1.75rem;
+}
+
+.pd-600 {
+  padding: 2rem;
+}
+
+.pd-650 {
+  padding: 2.5rem;
+}
+
+.pd-700 {
+  padding: 3rem;
+}
+
+.pd-800 {
+  padding: 6rem;
+}
+
+.color-dark {
+  color: #000;
+}
+
+.color-white {
+  color: #fff;
+}
+
+.color-light {
+  color: #f7eee4;
+}
+
+.color-light-shade {
+  color: #d8c7b5;
+}
+
+.color-light-gray {
+  color: #f7f7f7;
+}
+
+.color-brown {
+  color: #74372a;
+}
+
+.color-border {
+  color: #ae5f4e;
+}
+
+.color-primary {
+  color: #87d674;
+}
+
+.color-secondary {
+  color: #d86728;
+}
+
+.flow-space-200 {
+  --flow-space: 0.375rem;
+}
+
+.flow-space-300 {
+  --flow-space: 0.75rem;
+}
+
+.flow-space-400 {
+  --flow-space: 1rem;
+}
+
+.flow-space-450 {
+  --flow-space: 1.25rem;
+}
+
+.flow-space-500 {
+  --flow-space: 1.5rem;
+}
+
+.flow-space-550 {
+  --flow-space: 1.75rem;
+}
+
+.flow-space-600 {
+  --flow-space: 2rem;
+}
+
+.flow-space-650 {
+  --flow-space: 2.5rem;
+}
+
+.flow-space-700 {
+  --flow-space: 3rem;
+}
+
+.flow-space-800 {
+  --flow-space: 6rem;
+}
+
+.font-base {
+  font-family: 'Architects Daughter', cursive;
+}
+
+.leading-loose {
+  line-height: 1.7;
+}
+
+.leading-tight {
+  line-height: 1.25;
+}
+
+.leading-flat {
+  line-height: 1.1;
+}
+
+.text-200 {
+  font-size: 0.375rem;
+}
+
+.text-300 {
+  font-size: 0.75rem;
+}
+
+.text-400 {
+  font-size: 1rem;
+}
+
+.text-450 {
+  font-size: 1.25rem;
+}
+
+.text-500 {
+  font-size: 1.5rem;
+}
+
+.text-550 {
+  font-size: 1.75rem;
+}
+
+.text-600 {
+  font-size: 2rem;
+}
+
+.text-650 {
+  font-size: 2.5rem;
+}
+
+.text-700 {
+  font-size: 3rem;
+}
+
+.text-800 {
+  font-size: 6rem;
+}
+
+.weight-regular {
+  font-weight: 400;
+}
+
+.weight-semi-bold {
+  font-weight: 500;
+}
+
+.weight-bold {
+  font-weight: 700;
+}
+
+@media screen and (min-width: 48em) {
+  .md\:flow-space-200 {
+    --flow-space: 0.375rem;
+  }
+  .md\:flow-space-300 {
+    --flow-space: 0.75rem;
+  }
+  .md\:flow-space-400 {
+    --flow-space: 1rem;
+  }
+  .md\:flow-space-450 {
+    --flow-space: 1.25rem;
+  }
+  .md\:flow-space-500 {
+    --flow-space: 1.5rem;
+  }
+  .md\:flow-space-550 {
+    --flow-space: 1.75rem;
+  }
+  .md\:flow-space-600 {
+    --flow-space: 2rem;
+  }
+  .md\:flow-space-650 {
+    --flow-space: 2.5rem;
+  }
+  .md\:flow-space-700 {
+    --flow-space: 3rem;
+  }
+  .md\:flow-space-800 {
+    --flow-space: 6rem;
+  }
+  .md\:text-200 {
+    font-size: 0.375rem;
+  }
+  .md\:text-300 {
+    font-size: 0.75rem;
+  }
+  .md\:text-400 {
+    font-size: 1rem;
+  }
+  .md\:text-450 {
+    font-size: 1.25rem;
+  }
+  .md\:text-500 {
+    font-size: 1.5rem;
+  }
+  .md\:text-550 {
+    font-size: 1.75rem;
+  }
+  .md\:text-600 {
+    font-size: 2rem;
+  }
+  .md\:text-650 {
+    font-size: 2.5rem;
+  }
+  .md\:text-700 {
+    font-size: 3rem;
+  }
+  .md\:text-800 {
+    font-size: 6rem;
+  }
+}
+
+@media screen and (min-width: 70em) {
+  .lg\:flow-space-200 {
+    --flow-space: 0.375rem;
+  }
+  .lg\:flow-space-300 {
+    --flow-space: 0.75rem;
+  }
+  .lg\:flow-space-400 {
+    --flow-space: 1rem;
+  }
+  .lg\:flow-space-450 {
+    --flow-space: 1.25rem;
+  }
+  .lg\:flow-space-500 {
+    --flow-space: 1.5rem;
+  }
+  .lg\:flow-space-550 {
+    --flow-space: 1.75rem;
+  }
+  .lg\:flow-space-600 {
+    --flow-space: 2rem;
+  }
+  .lg\:flow-space-650 {
+    --flow-space: 2.5rem;
+  }
+  .lg\:flow-space-700 {
+    --flow-space: 3rem;
+  }
+  .lg\:flow-space-800 {
+    --flow-space: 6rem;
+  }
+  .lg\:text-200 {
+    font-size: 0.375rem;
+  }
+  .lg\:text-300 {
+    font-size: 0.75rem;
+  }
+  .lg\:text-400 {
+    font-size: 1rem;
+  }
+  .lg\:text-450 {
+    font-size: 1.25rem;
+  }
+  .lg\:text-500 {
+    font-size: 1.5rem;
+  }
+  .lg\:text-550 {
+    font-size: 1.75rem;
+  }
+  .lg\:text-600 {
+    font-size: 2rem;
+  }
+  .lg\:text-650 {
+    font-size: 2.5rem;
+  }
+  .lg\:text-700 {
+    font-size: 3rem;
+  }
+  .lg\:text-800 {
+    font-size: 6rem;
+  }
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core root defaults */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul {
+  list-style-type: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  border: none;
+  background: none;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.01s !important;
+            animation-duration: 0.01s !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01s !important;
+            transition-duration: 0.01s !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  font-family: 'Architects Daughter', cursive;
+  background: #f7eee4;
+  line-height: 1.5;
+}
+
 h1 {
-  color: red;
+  font-weight: normal;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+.buttons-sec {
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.buttons-sec button {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 0.375rem 0.75rem;
+}
+
+.buttons-sec button svg {
+  vertical-align: middle;
+}
+
+.buttons-sec > * + * {
+  margin-left: 2px;
+}
+
+.app-container {
+  margin-top: 10vh;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.main-wrapper {
+  background: #fff;
+  padding-top: 1em;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1em;
+  padding-right: 1em;
+  border: 1px solid #d8c7b5;
+  -webkit-box-shadow: 5px 5px 0 0 #fff, 5px 5px 0 1px #d8c7b5, 10px 10px 0 0 #fff, 10px 10px 0 1px #d8c7b5;
+          box-shadow: 5px 5px 0 0 #fff, 5px 5px 0 1px #d8c7b5, 10px 10px 0 0 #fff, 10px 10px 0 1px #d8c7b5;
+}
+
+.main-wrapper::before {
+  height: 20px;
+  margin-bottom: 2rem;
+  background-image: url('data:image/svg+xml; utf8, <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="9.5" fill="%23F7EEE4" stroke="%23D8C7B5"/></svg>');
+  background-repeat: space;
+  background-size: 34.3px 20px;
+  content: "";
+  display: block;
+}
+
+.todo-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.todo-form input {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  border: 1px solid #d8c7b5;
+  color: #74372a;
+}
+
+.todo-form input:focus {
+  outline: dashed 1px #d8c7b5;
+  outline-offset: -4px;
+}
+
+.todo-form button {
+  padding: 0.375rem 1rem;
+  margin-left: 1rem;
+}
+
+.todo-list {
+  margin-top: 2rem;
+}
+
+.todo-list .list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  border-bottom: 1px dashed #ae5f4e;
+}
+
+.todo-list .list-item:focus {
+  outline: 1px solid #d8c7b5;
+}
+
+.todo-list .list-item__second {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: left;
+  color: #74372a;
+}
+
+.todo-list .list-item .list-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.todo-list .list-item .list-icons svg {
+  vertical-align: middle;
+}
+
+.todo-list .list-item .list-icons:focus {
+  outline: 1px dotted #212121;
+}
+
+.todo-list .list-item .complete {
+  color: #d8c7b5;
 }
 /*# sourceMappingURL=style.css.map */

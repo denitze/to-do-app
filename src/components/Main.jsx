@@ -1,19 +1,19 @@
 import TodoForm from "./TodoForm";
 import React, { useState } from "react";
 import List from "./List";
+import Buttons from "./Buttons";
 
 const Main = () => {
   const [todos, setTodos] = useState([]);
   const [currentEdit, setCurrentEdit] = useState();
 
-  const handleAdd = (incomingTodo) => {
+  const handleAdd = (myTodo) => {
     const newTodo = {
-      task: incomingTodo,
+      task: myTodo,
       id: Date.now(),
       isComplete: false,
     };
     const newTodos = [newTodo, ...todos];
-    console.log(newTodos);
     setTodos(newTodos);
   };
 
@@ -23,13 +23,13 @@ const Main = () => {
   };
 
   const handleComplete = (myTodo) => {
-    const completeArray = todos.map((todo) => {
-      if (todo.id === myTodo.id) {
+    const completedArr = todos.map((todo) => {
+      if (todo === myTodo) {
         todo.isComplete = !todo.isComplete;
       }
       return todo;
     });
-    setTodos(completeArray);
+    setTodos(completedArr);
   };
 
   const handleCurrentEdit = (myTodo) => {
@@ -48,18 +48,56 @@ const Main = () => {
     setCurrentEdit();
   };
 
+  //Sorting
+  const sortMyTask = (type) => (a, b) => {
+    const A = a[type];
+    const B = b[type];
+
+    let compare = 0;
+    if (A > B) {
+      compare = -1;
+    } else if (A < B) {
+      compare = 1;
+    }
+    return compare;
+  };
+
+  //Delete completed
+  const deleteCompleted = () => {
+    const completedArr = [...todos].filter((todo) => !todo.isComplete);
+    setTodos(completedArr);
+  };
+
+  //Delete all
+
+  const deleteAll = () => {
+    const allDeleted = [...todos].filter((todo) => !todo);
+    setTodos(allDeleted);
+  };
+
   return (
     <section className="main-wrapper">
-      <h1>Hallo neue Todoliste! </h1>
-      <TodoForm onSubmit={handleAdd} todos={todos} />
-      <List
-        todos={todos}
-        currentEdit={currentEdit}
-        onTodoUpdate={handleUpdate}
-        onTodoCurrentEdit={handleCurrentEdit}
-        onTodoDeletion={handleDelete}
-        onTodoCompletion={handleComplete}
-      />
+      <div className="wrapper">
+        <h1 className="leading-tight text-600 md:text-650">
+          What needs to be done today?
+        </h1>
+        <TodoForm onSubmit={handleAdd} todos={todos} />
+        <List
+          todos={todos}
+          currentEdit={currentEdit}
+          onTodoUpdate={handleUpdate}
+          onTodoCurrentEdit={handleCurrentEdit}
+          onTodoDeletion={handleDelete}
+          onTodoCompletion={handleComplete}
+        />
+        <Buttons
+          onDeleteCompleted={deleteCompleted}
+          onDeleteAll={deleteAll}
+          setTodos={setTodos}
+          todos={todos}
+          sortMyTask={sortMyTask}
+        />
+      </div>
     </section>
   );
 };

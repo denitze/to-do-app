@@ -9,7 +9,7 @@ const List = ({
   onTodoCompletion,
 }) => {
   return (
-    <section>
+    <section className="todo-list">
       <ul>
         {todos.map((todo) => (
           <ListItem

@@ -1,0 +1,19 @@
+.buttons-sec {
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    flex-grow: 1;
+    padding: get-size("200") get-size("300");
+
+    svg {
+      vertical-align: middle;
+    }
+  }
+
+  > * + * {
+    margin-left: 2px;
+  }
+}

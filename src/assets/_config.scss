@@ -1,0 +1,129 @@
+/**
+ * BASE SIZE
+ * All calculations are based on this. It’s recommended that
+ * you keep it at 1rem because that is the root font size. You
+ * can set it to whatever you like and whatever unit you like.
+ */
+$gorko-base-size: 1rem;
+
+/**
+  * SIZE SCALE
+  * This is a Major Third scale that powers all the utilities that
+  * it is relevant for (font-size, margin, padding). All items are
+  * calcuated off the base size, so change that and cascade across
+  * your whole project.
+  */
+$gorko-size-scale: (
+  "200": $gorko-base-size * 0.375,
+  // 6px
+  "300": $gorko-base-size * 0.75,
+  // 12px
+  "400": $gorko-base-size,
+  // 16px
+  "450": $gorko-base-size * 1.25,
+  // 20px
+  "500": $gorko-base-size * 1.5,
+  // 24px
+  "550": $gorko-base-size * 1.75,
+  // 28px
+  "600": $gorko-base-size * 2,
+  // 32px
+  "650": $gorko-base-size * 2.5,
+  // 40px
+  "700": $gorko-base-size * 3,
+  // 48px
+  "800": $gorko-base-size * 6,
+  // 96px
+);
+
+/**
+  * COLORS
+  * Colors are shared between backgrounds and text by default.
+  * You can also use them to power borders, fills or shadows, for example.
+  */
+$gorko-colors: (
+  "dark": #000,
+  "white": #fff,
+  "light": #f7eee4,
+  "light-shade": #d8c7b5,
+  "light-gray": #f7f7f7,
+  "brown": #74372a,
+  "border": #ae5f4e,
+  "primary": #87d674,
+  "secondary": #d86728,
+);
+
+$gorko-border-radii: (
+  "s": $gorko-base-size * 0.25,
+  "m": $gorko-base-size * 0.375,
+  "l": $gorko-base-size * 0.5,
+  "xl": $gorko-base-size * 5,
+  "full": 50%,
+);
+
+/**
+  * CORE CONFIG
+  * This powers everything from utility class generation to breakpoints
+  * to enabling/disabling pre-built components/utilities.
+  */
+$gorko-config: (
+  "bg": (
+    "items": $gorko-colors,
+    "output": "standard",
+    "property": "background",
+  ),
+  "br": (
+    "items": $gorko-border-radii,
+    "output": "standard",
+    "property": "border-radius",
+  ),
+  "pd": (
+    "items": $gorko-size-scale,
+    "output": "standard",
+    "property": "padding",
+  ),
+  "color": (
+    "items": $gorko-colors,
+    "output": "standard",
+    "property": "color",
+  ),
+  "flow-space": (
+    "items": $gorko-size-scale,
+    "output": "responsive",
+    "property": "--flow-space",
+  ),
+  "font": (
+    "items": (
+      "base": "'Architects Daughter', cursive",
+    ),
+    "output": "standard",
+    "property": "font-family",
+  ),
+  "leading": (
+    "items": (
+      "loose": 1.7,
+      "tight": 1.25,
+      "flat": 1.1,
+    ),
+    "output": "standard",
+    "property": "line-height",
+  ),
+  "text": (
+    "items": $gorko-size-scale,
+    "output": "responsive",
+    "property": "font-size",
+  ),
+  "weight": (
+    "items": (
+      "regular": "400",
+      "semi-bold": "500",
+      "bold": "700",
+    ),
+    "output": "standard",
+    "property": "font-weight",
+  ),
+  "breakpoints": (
+    "md": "(min-width: 48em)",
+    "lg": "(min-width: 70em)",
+  ),
+);

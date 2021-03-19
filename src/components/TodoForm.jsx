@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 
 const TodoForm = (props) => {
-  const [incomingTodo, setIncomingTodo] = useState(
+  const [taskInput, setTaskInput] = useState(
     props.currentEdit ? props.todo.task : ""
   );
 
@@ -13,25 +13,33 @@ const TodoForm = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (!incomingTodo || /^\s*$/.test(incomingTodo)) {
+    if (!taskInput || /^\s*$/.test(taskInput)) {
       return;
     }
-    props.onSubmit(incomingTodo);
-    setIncomingTodo("");
+    props.onSubmit(taskInput);
+    setTaskInput("");
   };
 
   return (
-    <form action="" onSubmit={handleSubmit}>
+    <form action="" onSubmit={handleSubmit} className="todo-form">
       <input
         type="text"
         name="task"
         id=""
-        value={incomingTodo}
-        onChange={(e) => setIncomingTodo(e.target.value)}
+        value={taskInput}
+        onChange={(e) => setTaskInput(e.target.value)}
         placeholder="What needs to be done today?"
         ref={inputRef}
+        className="text-400 md:text-450 br-m bg-light-gray"
       />
-      <button> {props.currentEdit ? "Update" : "Add"}</button>
+      <button
+        className={`text-400 md:text-450 br-m ${
+          props.currentEdit ? "bg-secondary" : "bg-primary"
+        }`}
+      >
+        {" "}
+        {props.currentEdit ? "Update" : "Add"}
+      </button>
     </form>
   );
 };
